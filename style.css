@@ -1,0 +1,78 @@
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+table tbody tr td{
+  text-align: center;
+  padding:10px;
+}
+input[type="email"],textarea,input[type="text"],input[type="password"],select,input[type="file"],input[type="date"]{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+input[type="submit"],a {
+  background-color:green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+.text-center{
+  text-align:center;
+}
+.text-right{
+  text-align:right;
+}
+.bg-red{
+  background:red;
+}
+.p-10{
+  padding:10px;
+}
+.m-10{
+  margin:10px;
+}
+.mt-40{
+  margin-top:40px;
+}
+.d-flex{
+  display:flex;
+} 
+.justify-content-between{
+  justify-content:space-between;
+}
+.justify-content-center{
+  justify-content:center;
+}
+.dashboard-box{
+  width:150px;
+  height:100px;
+  background-color:green;
+  margin:10px;
+  text-align:center;
+  padding-top:30px;
+  color:#ffffff;
+  font-weight:bold;
+}
