@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us - Healthy Meal Delivery</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <style>body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: #444;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: skyblue;
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    
+    nav li {
+        margin-right: 20px;
+    }
+    
+    nav li:last-child {
+        margin-right: 0;
+    }
+    
+    nav a {
+        text-decoration: none;
+        color: #444;
+    }
+    
+    nav a:hover {
+        color: #f39c12;
+    }
+    
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    section {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+    
+    section.contact-form {
+        flex-basis: 60%;
+        margin-right: 20px;
+    }
+    
+    section.contact-form h2 {
+        margin-top: 0;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    
+    textarea {
+        height: 200px;
+    }
+    
+    input[type="submit"] {
+        background-color: #f39c12;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    input {type="submit"}
+    </style>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/meals%20delivery.html">Home</a></li>
+				<li><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/meals%20selecting%20page.html">Meals Plans</a></li>
+				<li><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/about%20meal%20delivery%20service.html">About Us</a></li>
+				<li class="active"><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/contact%20us%20page.html">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section class="contact-form">
+			<h2>Contact Us</h2>
+			<form>
+				<label for="name">Name</label>
+				<input type="text" id="name" name="name" required>
+
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required>
+
+				<label for="message">Message</label>
+				<textarea id="message" name="message" required></textarea>
+
+				<input type="submit" value="Submit">
+			</form>
+		</section>
+
+		<section class="contact-details">
+			<h3>Contact Details</h3>
+			<ul>
+				<li><i class="fas fa-phone-alt"></i> 555-1234</li>
+				<li><i class="fas fa-envelope"></i> info@healthymealdelivery.com</li>
+				<li><i class="fas fa-map-marker-alt"></i> 123 Main St, Anytown USA</li>
+			</ul>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 Healthy Meal Delivery</p>
+	</footer>
+</body>
+</html>

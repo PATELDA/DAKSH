@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Healthy Meal Delivery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+  </style>
+      <header>
+        <nav>
+          <ul>
+            <li class="active"><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/meals%20delivery.html">Home</a></li>
+            <li><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/meals%20selecting%20page.html">Meal Plans</a></li>
+            <li><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/about%20meal%20delivery%20service.html">About Us</a></li>
+            <li><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/contact%20us%20page.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+<body>
+    <header>
+        <!-- Header content -->
+    </header>
+
+    <main class="container">
+        <h2>Menu</h2>
+        <div class="menu-item">
+            <h3>Vegetarian Meal</h3>
+            <p>Description of Vegetarian Meal.</p>
+            <p>Price: $8</p>
+            <button onclick="addToCart('Vegetarian Meal', 8)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <h3>Meal 1</h3>
+            <p>Description of Meal 1.</p>
+            <p>Price: $10</p>
+            <button onclick="addToCart('Meal 1', 10)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <h3>Meal 2</h3>
+            <p>Description of Meal 2.</p>
+            <p>Price: $12</p>
+            <button onclick="addToCart('Meal 2', 12)">Add to Cart</button>
+        </div>
+        <!-- Add more menu items as needed -->
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+    <script>
+
+    function displayCart() {
+        const cartItemsElement = document.getElementById('cart-items');
+        const totalPriceElement = document.getElementById('total-price');
+        
+        cartItemsElement.innerHTML = '';
+        
+        for (let item of cart) {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('cart-item');
+            itemElement.innerHTML = `<p>${item.name}</p><p>$${item.price}</p>`;
+            cartItemsElement.appendChild(itemElement);
+        }
+    
+        const total = calculateTotal();
+        totalPriceElement.textContent = `$${total}`;
+    }
+    </script>
+    
+</body>
+</html>

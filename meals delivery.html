@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Healthy Meal Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <script>/* Global variables */
+
+        const menuButton = document.querySelector('.menu-button');
+        const nav = document.querySelector('nav');
+        const form = document.querySelector('.order-form');
+        const submitButton = document.querySelector('.submit-button');
+        const successMessage = document.querySelector('.success-message');
+        const deliveryStatus = document.querySelector('.delivery-status');
+        
+        /* Event listeners */
+        
+        menuButton.addEventListener('click', toggleMenu);
+        form.addEventListener('submit', submitOrder);
+        
+        /* Functions */
+        
+        function toggleMenu() {
+          nav.classList.toggle('open');
+        }
+        
+        function submitOrder(event) {
+          event.preventDefault();
+          const formData = new FormData(event.target);
+          const order = {};
+          formData.forEach((value, key) => {
+            order[key] = value;
+          });
+          const xhr = new XMLHttpRequest();
+          xhr.open('POST', '/submit-order');
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.onload = () => {
+            if (xhr.status === 200) {
+              form.reset();
+              successMessage.classList.add('show');
+              setTimeout(() => {
+                successMessage.classList.remove('show');
+              }, 5000);
+              getDeliveryStatus();
+            } else {
+              console.error(xhr.statusText);
+            }
+          };
+          xhr.send(JSON.stringify(order));
+        }
+        
+        function getDeliveryStatus() {
+          const xhr = new XMLHttpRequest();
+          xhr.open('GET', '/delivery-status');
+          xhr.onload = () => {
+            if (xhr.status === 200) {
+              deliveryStatus.textContent = xhr.responseText;
+            } else {
+              console.error(xhr.statusText);
+            }
+          };
+          xhr.send();
+        }
+        </script>
+    <style>/* Global styles */
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #23527c;
+}
+
+button {
+  background-color: #337ab7;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #23527c;
+}
+
+/* Header styles */
+
+header {
+  background-color: skyblue;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px;
+}
+
+/* Hero styles */
+
+.hero {
+  background-color: #f7f7f7;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+/* Features styles */
+
+.features {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.features h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+.features ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.features li {
+  margin-right: 20px;
+  margin-bottom: 50px;
+  text-align: left;
+  flex-basis: calc(33.33% - 20px);
+  position: relative;
+}
+
+.features li:last-child {
+  margin-right: 0;
+}
+
+.features li img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.features li h3 {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.features li p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.features li button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* CTA styles */
+
+.cta {
+  background-color: #337ab7;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.cta h2 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.cta p {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+/* Footer styles */
+
+footer {
+  background-color: #f7f7f7;
+  text-align: center;
+  padding: 20px 0;
+  margin-top:
+}
+</style>
+    <header>
+      <nav>
+        <ul>
+          <li class="active"><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/meals%20delivery.html">Home</a></li>
+          <li><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/meals%20selecting%20page.html">Meal Plans</a></li>
+          <li><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/about%20meal%20delivery%20service.html">About Us</a></li>
+          <li><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/contact%20us%20page.html">Contact Us</a></li>
+		  <li><a href="file:///C:/Users/daksh/Desktop/buisness%20idea%20for%20assignment/cart.html">Cart</a></li>
+		</ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Healthy Meal Delivery</h1>
+        <p>Enjoy delicious, home-cooked meals delivered right to your doorstep.</p>
+        <button>Order Now</button>
+      </section>
+      <section class="features">
+        <h2>Our Meal Plans</h2>
+        <ul>
+          <li>
+            <img src="C:\Users\daksh\Pictures\veg meal.webp" alt="Vegetarian Meal Plan">
+            <h3>Vegetarian</h3>
+            <p>A delicious selection of vegetarian meals made with fresh, seasonal ingredients.</p>
+            <button>Select Plan</button>
+          </li>
+          <li>
+            <img src="C:\Users\daksh\Pictures\gluten free image.jpg" alt="Gluten-Free Meal Plan">
+            <h3>Gluten-Free</h3>
+            <p>A gluten-free meal plan with a variety of healthy and delicious options.</p>
+            <button>Select Plan</button>
+          </li>
+          <li>
+            <img src="C:\Users\daksh\Pictures\low carb meal.jpg" alt="Low-Carb Meal Plan">
+            <h3>Low-Carb</h3>
+            <p>A low-carb meal plan that is perfect for anyone looking to eat healthier and lose weight.</p>
+            <button>Select Plan</button>
+          </li>
+        </ul>
+      </section>
+      <section class="cta">
+        <h2>Ready to Get Started?</h2>
+        <p>Sign up for our meal delivery service today and enjoy healthy, home-cooked meals delivered straight to your door!</p>
+        <button>Sign Up Now</button>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Healthy Meal Delivery</p>
+    </footer>
+  </body>
+</html>
